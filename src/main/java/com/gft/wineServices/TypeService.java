@@ -32,7 +32,7 @@ public class TypeService {
 	//Modify - PUT
 	public Type changeType(Type type, Integer id) {
 		
-		Type changedType = typeRepository.findById(id).get();		
+		Type changedType = findOneType(id);		
 		
 		changedType.setId(type.getId());
 		changedType.setName(type.getName());

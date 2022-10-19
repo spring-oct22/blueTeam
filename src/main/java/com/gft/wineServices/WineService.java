@@ -1,12 +1,8 @@
 package com.gft.wineServices;
 
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,13 +61,6 @@ public class WineService {
 		return wine;
 	}
 	
-	//Recommendations - GET
-	
-	/*public Set<Wine> theBest(Wine rating) {
-		List<Wine> bestRating= new ArrayList<>();
-		
-		}*/
-		
 		
 		
 		

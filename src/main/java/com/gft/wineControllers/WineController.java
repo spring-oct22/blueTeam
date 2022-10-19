@@ -2,8 +2,6 @@ package com.gft.wineControllers;
 
 
 import java.util.List;
-import java.util.Set;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,7 +36,7 @@ public class WineController {
 		return wine;			
 	}	
 	
-	@PostMapping ("/api/wine/{id}")
+	@PostMapping ("/api/wine")
 	public Wine postWine(@RequestBody Wine wine ) {
 			
 		return wineService.newWine(wine);
@@ -57,10 +55,7 @@ public class WineController {
 		
 	}
 	
-	/*@GetMapping ("/api/recommend/best?top=10")
-	public Set<Wine> bestWines() {
-		return wineService.
+	
+	
 		
-	}*/
-
 }

@@ -43,15 +43,15 @@ public class Wine {
 	@NotNull
 	@Range(min=1, max=5)
 	private String acidity;
-	@NotNull
+	
 	@ManyToOne
     @JoinColumn(name = "winery_id")
     private Winery winery;
-	@NotNull
+	
 	@ManyToOne
     @JoinColumn(name = "type_id")
     private Type type;
-	@NotNull
+	
 	@ManyToOne
     @JoinColumn(name = "region_id")
     private Region region;

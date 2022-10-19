@@ -34,7 +34,7 @@ public class WineryController {
 		
 	}	
 	
-	@PostMapping ("/api/winery/{id}")
+	@PostMapping ("/api/winery")
 	public Winery postWinery(@RequestBody Winery winery ) {
 			
 		return wineryService.newWinery(winery);
