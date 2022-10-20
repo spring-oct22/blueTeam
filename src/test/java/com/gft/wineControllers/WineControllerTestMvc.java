@@ -12,6 +12,7 @@ import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -49,13 +50,17 @@ class WineControllerTestMvc {
 				.contentType("application/json")
 				.content("{\"id\": 8000, \"name\": \"Mi vino de prueba\", \"year\": \"2007\",\"rating\": 4.6, \"num_reviews\": 70, \"price\": 399.6, \"body\": \"4\", \"acidity\": \"3\", \"winery\": {\"id\": 13, \"name\": \"Sierra Cantabria\"}, \"type\": {\"id\": 8, \"name\": \"Rioja Red\" }, \"region\": {\"id\": 8,\"name\": \"Rioja\", \"country\": \"Espana\"}}")
 				.accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk());
-		
+				.andExpect(status().isOk());		
 	}
 	
 	@Test
 	@Order(4)
-	public void putWineTestMvc() throws Exception{}
+	public void putWineTestMvc() throws Exception{
+		mockMvc.perform(put("/api/wine/{id}")
+				.contentType("application/json")
+				.content("{\"id\": 8000, \"name\": \"Mi vino de prueba cambiado\", \"year\": \"2007\",\"rating\": 4.6, \"num_reviews\": 70, \"price\": 399.6, \"body\": \"4\", \"acidity\": \"3\", \"winery\": {\"id\": 13, \"name\": \"Sierra Cantabria\"}, \"type\": {\"id\": 8, \"name\": \"Rioja Red\" }, \"region\": {\"id\": 8,\"name\": \"Rioja\", \"country\": \"Espana\"}}"))
+				.andExpect(status().isOk());
+	}
 	
 	
 	//Falta el PUT

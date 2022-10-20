@@ -2,8 +2,6 @@ package com.gft.wineServices;
 
 
 import java.util.List;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.gft.wine.Wine;
@@ -13,7 +11,7 @@ import com.gft.wineRepositories.WineRepository;
 @Service
 public class WineService {
 	@Autowired
-	private WineRepository wineRepository;	
+	private WineRepository wineRepository;		
 	
 
 	//Find All -GET
@@ -60,7 +58,29 @@ public class WineService {
 		wineRepository.deleteById(id);
 		return wine;
 	}
+
+	//Recommendations - GET
 	
+	
+	public List<Wine> top10Rated(Integer top) {
+
+		
+		List<Wine> topG = wineRepository.getTop10().subList(0, top);
+		return topG;
+	}
+
+	public List<Wine> pricier(Integer top) {
+
+		List<Wine> topP = wineRepository.getPricier().subList(0, top);
+		return topP;
+	}
+
+	public List<Wine> banger(Integer top) {
+
+		List<Wine> topB = wineRepository.getBanger().subList(0, top);
+		return topB;
+	}
+
 		
 		
 		
