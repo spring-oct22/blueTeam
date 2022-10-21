@@ -63,8 +63,6 @@ class WineControllerTestMvc {
 	}
 	
 	
-	//Falta el PUT
-	
 	@Test
 	@Order(5)
 	public void deleteWineTestMvc () throws Exception {
